@@ -1,7 +1,11 @@
 Breast Cancer Wisconsin
 ==============================
 
-Ung thu vu
+Hướng dẫn xem kết quả
+
+- Dữ liệu đã làm sạch: `data/processed/cancer_clean.csv`
+- Các biểu đồ và hình đánh giá mô hình: `reports/figures/`
+- Bạn có thể xem trực tiếp các file này mà không cần chạy lại code.
 
 Project Organization
 ------------
