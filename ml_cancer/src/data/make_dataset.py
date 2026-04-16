@@ -1,30 +1,42 @@
-# -*- coding: utf-8 -*-
-import click
-import logging
 from pathlib import Path
-from dotenv import find_dotenv, load_dotenv
+import pandas as pd
+from loguru import logger 
+from sklearn.preprocessing import MinMaxScaler
+from tqdm import tqdm
+import typer
+
+from src.config import PROCESSED_DATA_DIR, RAW_DATA_DIR
+
+app = typer.Typer()
 
 
-@click.command()
-@click.argument('input_filepath', type=click.Path(exists=True))
-@click.argument('output_filepath', type=click.Path())
-def main(input_filepath, output_filepath):
-    """ Runs data processing scripts to turn raw data from (../raw) into
-        cleaned data ready to be analyzed (saved in ../processed).
-    """
-    logger = logging.getLogger(__name__)
-    logger.info('making final data set from raw data')
+@app.command()
+def main():
+    # ---- REPLACE DEFAULT PATHS AS APPROPRIATE ----
+    input_cancer = RAW_DATA_DIR / "data.csv"
+    output_cancer = PROCESSED_DATA_DIR / "cancer_clean.csv"
+    logger.info("Loading breast cancer dataset.")
+    df = pd.read_csv(input_cancer)
+    print(df.shape)
+    print(df.head())
+    print(df.info())
+    #Clean
+    df = df.drop(columns=["Unnamed: 32"], errors="ignore")
+    df = df.drop_duplicates()
+    df = df.reset_index(drop=True)
+    print(df.isnull().sum())
+    num_cols = df.select_dtypes(include=["int64", "float64"]).columns
+    df[num_cols] = df[num_cols].fillna(df[num_cols].mean())
+    # NORMALIZE
+    num_cols = df.select_dtypes(include=["int64", "float64"]).columns
+
+    scaler = MinMaxScaler()
+    df[num_cols] = scaler.fit_transform(df[num_cols])
+    # SAVE
+    df.to_csv(output_cancer, index=False)
+
+    logger.success("Breast cancer done!")
 
 
-if __name__ == '__main__':
-    log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    logging.basicConfig(level=logging.INFO, format=log_fmt)
-
-    # not used in this stub but often useful for finding various files
-    project_dir = Path(__file__).resolve().parents[2]
-
-    # find .env automagically by walking up directories until it's found, then
-    # load up the .env entries as environment variables
-    load_dotenv(find_dotenv())
-
+if __name__ == "__main__":
     main()
