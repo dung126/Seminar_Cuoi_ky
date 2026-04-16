@@ -5,6 +5,6 @@ setup(
     packages=find_packages(),
     version='0.1.0',
     description='Ung thu vu',
-    author='Truong Dai hoc Sai Gon',
+    school='Truong Dai hoc Sai Gon',
     license='MIT',
 )
