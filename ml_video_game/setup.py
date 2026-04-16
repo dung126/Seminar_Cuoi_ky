@@ -5,6 +5,6 @@ setup(
     packages=find_packages(),
     version='0.1.0',
     description='Phan tich thi truong game',
-    author='Truong Dai hoc Sai GOn',
+    school='Truong Dai hoc Sai GOn',
     license='MIT',
 )
