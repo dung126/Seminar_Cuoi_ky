@@ -1,8 +1,28 @@
 Breast Cancer Wisconsin
 ==============================
-
-Hướng dẫn xem kết quả
-
+# Phân loại ung thư vú (Breast Cancer Classification)
+## Giới thiệu
+Dự án này áp dụng các thuật toán Machine Learning để phân loại khối u vú thành hai loại là:
+- Ác tính (Malignant - M)
+- Lành tính (Bengin - B)
+Mục tiêu của dự án này là xây dựng mô hình hỗ trợ phân tích và dự đoán trong y học.
+# Dataset
+- Bộ dữ liệu: Breast Cancer Dataset
+- Đặc trưng: Các thông số của tế bào như radius, texture,...
+- Nhãn : M (khối u ác tính), B (khối u lành tính)
+Link dataset: https://drive.google.com/file/d/11HHk3DIuyIJqsBYknGy0_5efaJFXqjFJ/view?usp=sharing
+# Mô hình sử dụng
+Logistic Regression/Random Forest
+# Đánh giá mô hình
+Đánh giá mô hình theo:
+- Accuracy
+- F1-score
+- Confusion matrix
+# Công nghệ sử dụng
+- Ngôn ngữ python
+- Pandas
+- Scikit-learn
+# Hướng dẫn xem kết quả
 - Dữ liệu đã làm sạch: `data/processed/cancer_clean.csv`
 - Các biểu đồ và hình đánh giá mô hình: `reports/figures/`
 - Bạn có thể xem trực tiếp các file này mà không cần chạy lại code.
