@@ -1,7 +1,27 @@
 Video Game Sales
 ==============================
+# Phân tích doanh số game (Video game sales)
+## Giới thiệu
+Dự án này dùng các thuật toán Machine Learning để phân tích doanh số của video game dựa trên các đặc trưng như nền tảng, thể loại, năm phát hành,...
+# Mục tiêu
+- Xây dựng mô hình dự đoán
+- Đánh giá độ chính xác của mô hình
+# Dataset
+- Bộ dữ liệu: Video game sales
+- Đặc trưng: Platform, Genre, Year, Publisher,...
+- Nhãn: Global Sales
+Link dataset: https://drive.google.com/file/d/1-XhgC2Kyw0X2Luz8XsrwRuj1NHLYsg4M/view?usp=sharing
+# Mô hình sử dụng
+Linear Regression/Random Forest Regressor
+# Đánh giá mô hình
+- Mean Square Error (MSE)
+- Root Mean Square Error (RMSE)
+# Công nghệ sử dụng
+- Ngôn ngữ python
+- Pandas
+- Scikit-learn
+# Hiển thị kết quả
 
-Phan tich thi truong game
 
 Project Organization
 ------------
