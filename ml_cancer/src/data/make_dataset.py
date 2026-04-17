@@ -30,7 +30,7 @@ def main():
     df['diagnosis'] = df['diagnosis'].map({'B': 0, 'M': 1})
     print('Giá trị diagnosis sau mã hóa:', df['diagnosis'].unique())
 
-    # Scale feature số, bỏ cột id & diagnosis
+    # Scale feature số, bỏ cột id & diagnosism
     feature_cols = [col for col in df.select_dtypes(include=["int64", "float64"]).columns if col not in ['id', 'diagnosis']]
     scaler = MinMaxScaler()
     df[feature_cols] = scaler.fit_transform(df[feature_cols])

@@ -59,7 +59,7 @@ print("Accuracy :", accuracy_score(y_test, y_pred_rf))
 print("F1-score :", f1_score(y_test, y_pred_rf, average='weighted'))
 print(classification_report(y_test, y_pred_rf))
 
-# 7. Visualization - lưu ảnh vào reports/figures/
+# 7. Visualization 
 os.makedirs('reports/figures', exist_ok=True)
 
 # Confusion Matrix
