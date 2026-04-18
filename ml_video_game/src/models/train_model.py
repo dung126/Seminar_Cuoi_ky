@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.linear_model import LinearRegression  # Import mô hình Linear Regression [3]
+from sklearn.linear_model import LinearRegression  
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
@@ -22,7 +22,7 @@ try:
 except FileNotFoundError:
     print("Lỗi: Không tìm thấy file 'gamesale_clean.csv'.")
 
-# --- BƯỚC 2: XỬ LÝ CỘT YEAR ---
+# XỬ LÝ CỘT YEAR 
 # Chuyển đổi sang số, xóa dấu chấm lỗi và điền khuyết bằng trung vị
 df['Year_Clean'] = pd.to_numeric(df['Year'].astype(str).str.replace('.', '', regex=False), errors='coerce')
 df['Year_Clean'] = df['Year_Clean'].fillna(df['Year_Clean'].median())
@@ -40,7 +40,6 @@ preprocessor = ColumnTransformer(
         ('cat', OneHotEncoder(handle_unknown='ignore'), ['Platform', 'Genre'])
     ], remainder='passthrough'
 )
-
 
 # Linear Regression
 lr_pipeline = Pipeline(steps=[
@@ -106,3 +105,4 @@ plt.xlabel('Giá trị sai số')
 
 plt.tight_layout()
 plt.show()
+
