@@ -1,5 +1,32 @@
 Breast Cancer Wisconsin
 ==============================
+## Giới thiệu
+Dự án này áp dụng các thuật toán Machine Learning để phân loại khối u vú thành:
+- Ác tính (Malignant - M)
+- Lành tính (Bengign - B)
+Mục tiêu là xây dựng mô hình hỗ trợ phân tích và dự đoán trong y học.
+## Mục tiêu
+- Xây dựng mô hình phân loại
+- Đánh giá mô hình bằng các chỉ số tiêu chuẩn.
+## Dataset
+- Bộ dữ liệu: Breast Cancer Dataset
+- Đặc trưng: các thông số của tế bào (radius, texture,...)
+- Nhãn: M(ác tính)/ B(lành tính)
+## Mô hình sử dụng
+Logistic Regression/ Random Forest/ SSVM
+## Đánh giá mô hình
+- Accuracy (độ chính xác)
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+## Công nghệ sử dụng
+- Python
+- Pandas
+- Numpy
+- Scikit-learn
+## Kết quả 
+Mô hình đạt độ chính xác cao trong việc phân loại
 
 Hướng dẫn xem kết quả
 
