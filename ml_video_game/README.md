@@ -1,7 +1,34 @@
 Video Game Sales
 ==============================
+## Giới thiệu
+Dự án này sử dụng Machine Learning để dự đoán doanh số toàn cầu của video game dựa trên các đặc trưng như nền tảng, thể loại, năm phát hành,...
+Đây là bài toán Hồi quy (Regression)
+## Mục tiêu
+- Xây dựng mô hình dự đoán
+- Đánh giá độ chính xác của mô hình
+## Dataset
+- Bộ dữ liệu: Video Game Sales
+- Đặc trưng: Platform, Genre, Year, Publisher,...
+- Nhãn: Global Sales
+## Mô hình sử dụng
+Linear Regression/ Random Forest Regressor
+## Đánh giá mô hình 
+- Mean Squared Error (MSE)
+- R^2 Score
+## Công nghệ sử dụng
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+## Kết quả
+Mô hình dự đoán doanh số với độ chính xác tương đối
 
-Phan tich thi truong game
+Hướng dẫn xem kết quả
+
+- Dữ liệu đã làm sạch: `data/processed/gamesale_clean.csv`
+- Các biểu đồ và hình đánh giá mô hình: `reports/figures/`
+- Bạn có thể xem trực tiếp các file này mà không cần chạy lại code.
+
 
 Project Organization
 ------------
